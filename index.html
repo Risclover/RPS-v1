@@ -4,59 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="styles.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-<script>
-// Rock paper scissors game
-function game(){
-    // Choose random choice for computer
-    function computerPlay() {
-        let choices = ['Rock', 'Paper', 'Scissors'];
-        let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-        return computerChoice.toLowerCase();
-    }
-
-    let computerChoice = computerPlay();
-
-    // 1 round of the game
-    function gameRound(playerSelection, computerSelection) {
-        if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'scissors') {
-            
-            return "It's a tie! (You picked " + playerSelection + " and the computer picked " + computerSelection + ")";
-
-        } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
-            playerScore++;
-            return "You win! " + playerSelection + " beats " + computerSelection;
-        } else {
-            computerScore++;
-            return "You lose! " + playerSelection + " loses to " + computerSelection;
-        };
-    }
-            
-    let playerScore = 0;
-    let computerScore = 0;
-
-    // Loop that plays the game 5 times before game() function ends
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("It's your move! Please choose rock, paper, or scissors.");
-        let computerSelection = computerPlay();
-        console.log(gameRound(playerSelection, computerSelection));
-        console.log("Player score: " + playerScore);
-        console.log("Computer score: " + computerScore);
-    }
-
-    // Showing the final score at the end
-    if (playerScore > computerScore) {
-        return "Player wins! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    } else if (playerScore === computerScore) {
-        return "It's a tie! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    } else {
-        return "Computer wins! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    }
-}
-
-
+<div class="container">
+    <h1>Rock, Paper, Scissors</h1>
+    <p>Click one of the following buttons to play against the computer.</p>
+    <div class="buttoncontainer">
+        <button id="rock" class="rps">Rock</button>
+        <button id="paper" class="rps">Paper</button>
+        <button id="scissors" class="rps">Scissors</button>
+    </div>
+    <div class="pcontainer">
+        <p id="result"></p>
+        <p id="score"></p>
+        <p id="space"></p>
+    </div>
+</div>
+<script src="script.js">
 </script>
 </body>
 </html>
