@@ -4,59 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/2b4114baf6.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Arapey:ital@0;1&family=Eczar:wght@400;500;600;700;800&family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;1,400&family=Patrick+Hand&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Taviraj:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+    <title>Rock, Paper, Scissors!</title>
 </head>
+
 <body>
-<script>
-// Rock paper scissors game
-function game(){
-    // Choose random choice for computer
-    function computerPlay() {
-        let choices = ['Rock', 'Paper', 'Scissors'];
-        let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-        return computerChoice.toLowerCase();
-    }
-
-    let computerChoice = computerPlay();
-
-    // 1 round of the game
-    function gameRound(playerSelection, computerSelection) {
-        if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'rock' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'scissors') {
-            
-            return "It's a tie! (You picked " + playerSelection + " and the computer picked " + computerSelection + ")";
-
-        } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors' || playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper' || playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
-            playerScore++;
-            return "You win! " + playerSelection + " beats " + computerSelection;
-        } else {
-            computerScore++;
-            return "You lose! " + playerSelection + " loses to " + computerSelection;
-        };
-    }
-            
-    let playerScore = 0;
-    let computerScore = 0;
-
-    // Loop that plays the game 5 times before game() function ends
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("It's your move! Please choose rock, paper, or scissors.");
-        let computerSelection = computerPlay();
-        console.log(gameRound(playerSelection, computerSelection));
-        console.log("Player score: " + playerScore);
-        console.log("Computer score: " + computerScore);
-    }
-
-    // Showing the final score at the end
-    if (playerScore > computerScore) {
-        return "Player wins! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    } else if (playerScore === computerScore) {
-        return "It's a tie! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    } else {
-        return "Computer wins! Final score = Player: " + playerScore + " / Computer: " + computerScore;
-    }
-}
+<div class="header">
+    <h1>Rock, Paper, Scissors</h1>
+</div>
+<div class="container">
 
 
+    <div id="middle">
+        <div id="playerbox">
+            <h2>Player</h2>
+            <p><i class="person-icon fas fa-user fa-5x"></i></p>
+        </div>
+        <div id="informationbox">
+            <h2 id="scorehead">Score</h2>
+            <p id="score"><i class="far fa-handshake fa-3x"></i></p>
+            <p id="result"></p>
+            <p id="instructions">Make your choice below to start. First to 5 points wins!</p>
+        </div>
+        <div id="computerbox">
+            <h2 id="computer">Computer</h2>
+            <p><i class="computer-icon fas fa-robot fa-5x"></i></p>
+        </div>
+    </div>
+
+    <div class="playcontainer">
+    <img src="Images/rock_icon.png" class="playbutton" id="rock">
+    <img src="Images/paper_icon.png" class="playbutton" id="paper">
+    <img src="Images/scissors_icon.png" class="playbutton" id="scissors">
+    </div>
+</div>
+<footer>
+    <div id="footerdiv">
+        <p>Created by RiscloverYT</p>
+    </div>
+</footer>
+<script src="script.js">
 </script>
 </body>
 </html>
