@@ -1,35 +1,178 @@
 body, html {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Neuton';
+    background-color: #fcf6d3;
+    width: 97vw;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    margin-bottom: 40px;
+    background-color: #106584;
+    width: 100%;
+    border-bottom: 1px white solid;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    z-index: 2;
 }
 
 .container {
-    padding: 0 40px;
-    margin: 0 auto;
-    width: 475px;
-    height: 300px;
+    position: relative;
+    padding: 20px;
+    margin: 120px auto 0 auto;
+    width: 85%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.rps {
-    width: 75px;
-}
 
-.buttoncontainer {
+h1 {
+    text-align: center;
+    font-size: 48px;
+    padding: 10px;
     margin: 10px;
-    width: 250px;
+}
+
+.playbutton {
+    width: 150px;
+    height: auto;
+    margin: 20px 50px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.playcontainer {
+    margin-top: 1vw;
     display: flex;
     justify-content: space-between;
 }
 
-.pcontainer {
-    margin: 10px 0;
-}
- 
-p {
-    margin: 10px;
+.playbutton:hover {
+    transform: scale(1.05);
 }
 
-h1 {
+#middle {
+    display: flex;
+}
+
+#playerbox {
     text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: white;
+    border: 5px solid rgb(44, 44, 44);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#computerbox {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: white;
+    border: 5px solid rgb(44, 44, 44);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#informationbox {
+    text-align: center;
+    height: 200px;
+    margin: 10px;
+    padding: 0 10px 20px 10px;
+    width: 300px;
+    border: 5px solid rgb(44, 44, 44);
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#playerbox h2 {
+    margin: 0 0 30px 0;
+    font-size: 2em;
+    color: black;
+}
+
+#computerbox h2 {
+    margin: 0 0 30px 0;
+    font-size: 2em;
+    color: black;
+}
+
+#informationbox h2 {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.person-icon {
+    color: rgb(179, 179, 179);
+}
+
+.computer-icon {
+    color: rgb(179, 179, 179);
+}
+
+footer {
+    text-align: center;
+    background-color: #106584;
+    color: white;
+    border-top: 1px solid white;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    height: 5vh;
+    z-index: 1;
+}
+
+.try-again {
+    border: 2px solid black;
+    background-color: white;
+    padding: 5px;
+    outline: 0;
+    height: 40px;
+    width: 120px;
+    font-family: 'Taviraj';
+    font-size: .8em;
+    margin: 0;
+}
+
+.try-again:hover {
+    background-color:rgb(44, 44, 44);
+    color: white;
+}
+
+footer p {
+    font-size: 1.5em;
+}
+
+#instructions {
+    font-size: 18px;
+}
+
+#scorehead {
+    margin-bottom: 5px;
 }

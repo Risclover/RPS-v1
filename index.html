@@ -5,24 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/2b4114baf6.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Arapey:ital@0;1&family=Eczar:wght@400;500;600;700;800&family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;1,400&family=Patrick+Hand&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Taviraj:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
     <link href="styles.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Rock, Paper, Scissors!</title>
 </head>
+
 <body>
-<div class="container">
+<div class="header">
     <h1>Rock, Paper, Scissors</h1>
-    <p>Click one of the following buttons to play against the computer.</p>
-    <div class="buttoncontainer">
-        <button id="rock" class="rps">Rock</button>
-        <button id="paper" class="rps">Paper</button>
-        <button id="scissors" class="rps">Scissors</button>
+</div>
+<div class="container">
+
+
+    <div id="middle">
+        <div id="playerbox">
+            <h2>Player</h2>
+            <p><i class="person-icon fas fa-user fa-5x"></i></p>
+        </div>
+        <div id="informationbox">
+            <h2 id="scorehead">Score</h2>
+            <p id="score"><i class="far fa-handshake fa-3x"></i></p>
+            <p id="result"></p>
+            <p id="instructions">Make your choice below to start. First to 5 points wins!</p>
+        </div>
+        <div id="computerbox">
+            <h2 id="computer">Computer</h2>
+            <p><i class="computer-icon fas fa-robot fa-5x"></i></p>
+        </div>
     </div>
-    <div class="pcontainer">
-        <p id="result"></p>
-        <p id="score"></p>
-        <p id="space"></p>
+
+    <div class="playcontainer">
+    <img src="Images/rock_icon.png" class="playbutton" id="rock">
+    <img src="Images/paper_icon.png" class="playbutton" id="paper">
+    <img src="Images/scissors_icon.png" class="playbutton" id="scissors">
     </div>
 </div>
+<footer>
+    <div id="footerdiv">
+        <p>Created by RiscloverYT</p>
+    </div>
+</footer>
 <script src="script.js">
 </script>
 </body>

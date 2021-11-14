@@ -1,12 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('img');
+const computerBox = document.getElementById('computerbox');
+let computer = document.getElementById('computer');
+let computerPic = document.createElement('img');
+
 
 /* Computer chooses rock, paper, or scissors randomly */
-function computerPlay() {
-	const choices = ['rock', 'paper', 'scissors']
-	return choices[Math.floor(Math.random() * 3)]
-}
+
 
 /* Game Over condition */
 function gameOver() {
@@ -14,9 +15,11 @@ function gameOver() {
 }
 
 
+
 /* A round of the game */
 function playRound(playerSelection, computerSelection) {
     if(!gameOver()) {
+        personPlay();
         /* Player and Computer choose the same (tied) */
         if (playerSelection === computerSelection) {
             document.getElementById('result').innerText = (`You tie! Player chose ${playerSelection} and computer chose ${computerSelection}`);
@@ -79,15 +82,59 @@ buttons.forEach(button => {
         playerSelection = button.id;
         computerSelection = computerPlay();
         let result = playRound(playerSelection,computerSelection);
+        instructionsGone();
     });
 });
 
 function tryAgain() {
-    const btn = document.createElement('button');
-    btn.textContent = "Try again?";
-    btn.style.margin = '20px 0';
-    space.appendChild(btn);
-    btn.addEventListener('click', event => {
+    const result = document.getElementById('result');
+    const tryBtn = document.createElement('button');
+    var br = document.createElement("br");
+    result.appendChild(br);
+    tryBtn.textContent = "Try again?";
+    tryBtn.style.margin = '20px 0';
+    tryBtn.classList.add('try-again');
+    result.appendChild(tryBtn);
+    tryBtn.addEventListener('click', event => {
         location.reload();
     });
 }
+
+function computerPlay() {
+    const weapons = ['rock', 'paper', 'scissors'];
+    const computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
+    const computerIcon = document.querySelector('.computer-icon');
+
+    computerIcon.classList.remove('fa-robot', 'fa-hand-rock', 'fa-hand-paper', 'fa-hand-peace');
+    if (computerSelection === 'rock') {
+      computerIcon.classList.add('fa-hand-rock');
+      computerIcon.style.color = "#f7c49c";
+    } else if (computerSelection === 'paper') {
+      computerIcon.classList.add('fa-hand-paper');
+      computerIcon.style.color = "#f7c49c";
+    } else if (computerSelection === 'scissors') {
+      computerIcon.classList.add('fa-hand-peace');
+      computerIcon.style.color = "#f7c49c";
+    }
+    return computerSelection;
+  }
+  
+  function personPlay() {
+      const personIcon = document.querySelector('.person-icon');
+      personIcon.classList.remove('fa-user', 'fa-hand-rock', 'fa-hand-paper', 'fa-hand-peace');
+      if (playerSelection === 'rock') {
+          personIcon.classList.add('fa-hand-rock');
+          personIcon.style.color = "#f7c49c";
+      } else if (playerSelection === 'paper') {
+          personIcon.classList.add('fa-hand-paper');
+          personIcon.style.color = "#f7c49c";
+      } else if (playerSelection === 'scissors') {
+          personIcon.classList.add('fa-hand-peace');
+          personIcon.style.color = "#f7c49c";
+      }
+  } 
+
+  function instructionsGone() {
+      const instrP = document.getElementById('instructions');
+      instrP.textContent = "";
+  }
