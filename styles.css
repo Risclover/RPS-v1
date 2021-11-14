@@ -1,3 +1,4 @@
+/* General */
 body, html {
     font-family: 'Neuton';
     background-color: #fcf6d3;
@@ -6,6 +7,15 @@ body, html {
     margin: 0;
     color: black;
 }
+
+p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header */
 
 .header {
     position: fixed;
@@ -19,6 +29,17 @@ body, html {
     z-index: 2;
 }
 
+h1 {
+    text-align: center;
+    font-size: 48px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+/* Body */
+
 .container {
     position: relative;
     padding: 20px;
@@ -30,13 +51,13 @@ body, html {
     align-items: center;
 }
 
-
-h1 {
-    text-align: center;
-    font-size: 48px;
-    padding: 10px;
-    margin: 10px;
+#middle {
+    display: flex;
 }
+
+
+
+/* Play buttons */
 
 .playbutton {
     width: 150px;
@@ -56,11 +77,11 @@ h1 {
     transform: scale(1.05);
 }
 
-#middle {
-    display: flex;
-}
 
-#playerbox {
+
+/* Game boxes */
+
+.gamebox {
     text-align: center;
     padding: 10px;
     width: 200px;
@@ -72,16 +93,10 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-#computerbox {
-    text-align: center;
-    padding: 10px;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border-radius: 15px;
-    background-color: white;
-    border: 5px solid rgb(44, 44, 44);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+.gamebox h2 {
+    margin: 0 0 30px 0;
+    font-size: 2em;
+    color: black;
 }
 
 #informationbox {
@@ -102,51 +117,22 @@ h1 {
 
 }
 
-#playerbox h2 {
-    margin: 0 0 30px 0;
-    font-size: 2em;
-    color: black;
-}
-
-#computerbox h2 {
-    margin: 0 0 30px 0;
-    font-size: 2em;
-    color: black;
-}
-
 #informationbox h2 {
     font-size: 2.5em;
     margin: 0 0 10px 0;
     padding: 0;
 }
 
-p {
+#instructions {
     font-size: 18px;
-    margin: 0;
-    padding: 0;
 }
 
-.person-icon {
-    color: rgb(179, 179, 179);
+#scorehead {
+    margin-bottom: 5px;
 }
 
-.computer-icon {
-    color: rgb(179, 179, 179);
-}
 
-footer {
-    text-align: center;
-    background-color: #106584;
-    color: white;
-    border-top: 1px solid white;
-    position: fixed;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    height: 5vh;
-    z-index: 1;
-}
+/* "Try again?" button */
 
 .try-again {
     border: 2px solid black;
@@ -165,23 +151,36 @@ footer {
     color: white;
 }
 
+
+
+/* Icons */
+
+.person-icon {
+    color: rgb(179, 179, 179);
+}
+
+.computer-icon {
+    color: rgb(179, 179, 179);
+}
+
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background-color: #106584;
+    color: white;
+    border-top: 1px solid white;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    height: 5vh;
+    z-index: 1;
+}
+
 footer p {
     font-size: 1.5em;
-}
-
-#instructions {
-    font-size: 18px;
-}
-
-#scorehead {
-    margin-bottom: 5px;
-<<<<<<< HEAD
-}
-
-@media screen and (max-width: 800px) {
-    body {
-        color: red;
-    }
-=======
->>>>>>> 214fca43c4fec14dbcee52f9a9db92a1ef60db0d
 }

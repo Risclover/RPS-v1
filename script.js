@@ -1,3 +1,4 @@
+/* Variables and initialization */
 let playerScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll('img');
@@ -6,8 +7,25 @@ let computer = document.getElementById('computer');
 let computerPic = document.createElement('img');
 
 
-/* Computer chooses rock, paper, or scissors randomly */
-
+/* Computer chooses rock, paper, or scissors randomly. Icon changes. */
+function computerPlay() {
+    const weapons = ['rock', 'paper', 'scissors'];
+    const computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
+    const computerIcon = document.querySelector('.computer-icon');
+    computerIcon.classList.remove('fa-robot', 'fa-hand-rock', 'fa-hand-paper', 'fa-hand-peace');
+    if (computerSelection === 'rock') {
+      computerIcon.classList.add('fa-hand-rock');
+      computerIcon.style.color = "#f7c49c";
+    } else if (computerSelection === 'paper') {
+      computerIcon.classList.add('fa-hand-paper');
+      computerIcon.style.color = "#f7c49c";
+    } else if (computerSelection === 'scissors') {
+      computerIcon.classList.add('fa-hand-peace');
+      computerIcon.style.color = "#f7c49c";
+    }
+    return computerSelection;
+  }
+  
 
 /* Game Over condition */
 function gameOver() {
@@ -15,11 +33,10 @@ function gameOver() {
 }
 
 
-
 /* A round of the game */
 function playRound(playerSelection, computerSelection) {
     if(!gameOver()) {
-        personPlay();
+        personPlay(); /* Calls the function that changes the Player's icons /*
         /* Player and Computer choose the same (tied) */
         if (playerSelection === computerSelection) {
             document.getElementById('result').innerText = (`You tie! Player chose ${playerSelection} and computer chose ${computerSelection}`);
@@ -86,6 +103,8 @@ buttons.forEach(button => {
     });
 });
 
+
+/* Try Again button appears. When clicked, refreshes the page to start a new game. */
 function tryAgain() {
     const result = document.getElementById('result');
     const tryBtn = document.createElement('button');
@@ -100,25 +119,8 @@ function tryAgain() {
     });
 }
 
-function computerPlay() {
-    const weapons = ['rock', 'paper', 'scissors'];
-    const computerSelection = weapons[Math.floor(Math.random() * weapons.length)];
-    const computerIcon = document.querySelector('.computer-icon');
 
-    computerIcon.classList.remove('fa-robot', 'fa-hand-rock', 'fa-hand-paper', 'fa-hand-peace');
-    if (computerSelection === 'rock') {
-      computerIcon.classList.add('fa-hand-rock');
-      computerIcon.style.color = "#f7c49c";
-    } else if (computerSelection === 'paper') {
-      computerIcon.classList.add('fa-hand-paper');
-      computerIcon.style.color = "#f7c49c";
-    } else if (computerSelection === 'scissors') {
-      computerIcon.classList.add('fa-hand-peace');
-      computerIcon.style.color = "#f7c49c";
-    }
-    return computerSelection;
-  }
-  
+/* When the player selects RPS, icon updates to reflect that choice. */
   function personPlay() {
       const personIcon = document.querySelector('.person-icon');
       personIcon.classList.remove('fa-user', 'fa-hand-rock', 'fa-hand-paper', 'fa-hand-peace');
@@ -134,6 +136,8 @@ function computerPlay() {
       }
   } 
 
+
+/* Quick small function to make the instructions disappear (for appearance reasons) */
   function instructionsGone() {
       const instrP = document.getElementById('instructions');
       instrP.textContent = "";
