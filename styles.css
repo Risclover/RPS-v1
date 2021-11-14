@@ -175,10 +175,13 @@ footer p {
 
 #scorehead {
     margin-bottom: 5px;
+<<<<<<< HEAD
 }
 
 @media screen and (max-width: 800px) {
     body {
         color: red;
     }
+=======
+>>>>>>> 214fca43c4fec14dbcee52f9a9db92a1ef60db0d
 }
