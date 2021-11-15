@@ -1,6 +1,6 @@
 /* General */
 body, html {
-    font-family: 'Neuton';
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #fcf6d3;
     min-width: 100%;
     min-height: 100%;
@@ -32,6 +32,7 @@ p {
 }
 
 h1 {
+    font-family: 'Neuton', serif;
     text-align: center;
     font-size: 48px;
     padding: 10px;
@@ -151,7 +152,7 @@ h1 {
     outline: 0;
     height: 40px;
     width: 120px;
-    font-family: 'Taviraj';
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: .8em;
     margin: 0;
 }
